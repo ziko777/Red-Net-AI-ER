@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-[#e6f3ff] text-gray-900;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/40 backdrop-blur-xl border-2 border-white/60 shadow-2xl;
+  }
+  
+  .tech-border {
+    position: relative;
+  }
+  
+  .tech-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-top: 2px solid #3b82f6;
+    border-left: 2px solid #3b82f6;
+  }
+  
+  .tech-border::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-bottom: 2px solid #3b82f6;
+    border-right: 2px solid #3b82f6;
+  }
+
+  /* Formal Report Styles */
+  .prose h1 {
+    @apply text-center text-3xl font-bold mb-10 text-gray-900 border-b-2 border-red-600 pb-6;
+  }
+  
+  .prose h2 {
+    @apply text-2xl font-bold mt-10 mb-6 text-gray-800 flex items-center gap-2 border-l-4 border-red-500 pl-4;
+  }
+  
+  .prose h3 {
+    @apply text-xl font-bold mt-8 mb-4 text-gray-700 pl-2;
+  }
+
+  .prose h4 {
+    @apply text-lg font-bold mt-6 mb-3 text-gray-600;
+  }
+  
+  .prose p {
+    @apply text-gray-700 leading-relaxed mb-4 text-justify indent-8 text-[16px];
+  }
+  
+  .prose ul, .prose ol {
+    @apply my-4 space-y-2;
+  }
+  
+  .prose li {
+    @apply text-gray-700;
+  }
+
+  .prose blockquote {
+    @apply border-l-4 border-blue-200 bg-blue-50/30 p-4 rounded-r-xl italic my-6;
+  }
+}
